@@ -1,0 +1,2 @@
+{"ts": "2026-11-07T10:29:02+08:00", "agent": "batch:domain-skills", "task": "编写 10 个领域 Skill 的 SKILL.md（P1-P3）", "status": "ok", "session": "session-a06a4e1d-3a6e-4720-b12c-aa268bbac118", "note": "并行批次，产物经 kb.py validate 复核 0 error"}
+{"ts": "2026-11-07T10:29:02+08:00", "agent": "batch:agent-cards", "task": "编写 12 张领域 Agent persona 卡片", "status": "ok", "session": "session-a06a4e1d-3a6e-4720-b12c-aa268bbac118", "note": "11 只读 + 1 受限写；自写契约检查 PROBLEMS: none"}

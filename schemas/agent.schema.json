@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "title": "subagent-persona",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["name", "description", "role", "domain", "mode", "tools", "output_contract"],
+  "properties": {
+    "name": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+    "description": { "type": "string", "minLength": 8 },
+    "role": { "type": "string", "minLength": 4 },
+    "domain": { "type": "string", "enum": ["orchestration", "coding", "research", "ops", "knowledge"] },
+    "mode": { "type": "string", "enum": ["read-only", "read-write"] },
+    "tools": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+    "can_write": { "type": "array", "items": { "type": "string" } },
+    "max_depth": { "type": "integer" },
+    "model": { "type": "string" },
+    "output_contract": { "type": "string", "minLength": 8 },
+    "escalate_when": { "type": "string" }
+  }
+}

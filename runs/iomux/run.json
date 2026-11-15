@@ -1,0 +1,11 @@
+{
+  "task": "iomux",
+  "phases": {
+    "requirements": {
+      "passed": false,
+      "detail": "spec.md 不存在或为空",
+      "checked_at": "2026-11-15T23:43:36+08:00"
+    }
+  },
+  "created": "2026-11-15T23:43:36+08:00"
+}

@@ -1,0 +1,23 @@
+{
+  "installed_at": "2026-11-07T10:53:06+08:00",
+  "scope": "user",
+  "target": "C:\\Users\\77214\\.dsh\\skills",
+  "source": ".dsh/skills",
+  "skills": [
+    "agent-dispatch",
+    "bootstrap",
+    "code-reviewer",
+    "decision-logger",
+    "experience-capture",
+    "incident-responder",
+    "make-skill",
+    "pattern-spotter",
+    "project-summary",
+    "release-manager",
+    "research-assistant",
+    "sop-executor",
+    "spec-writer",
+    "task-tracker",
+    "weekly-review"
+  ]
+}

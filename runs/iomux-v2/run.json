@@ -1,0 +1,14 @@
+{
+  "task": "iomux-v2",
+  "phases": {
+    "requirements": {
+      "passed": true,
+      "detail": "spec.md 2217 bytes",
+      "checked_at": "2026-11-15T23:48:31+08:00"
+    }
+  },
+  "created": "2026-11-15T23:47:13+08:00",
+  "skills": {
+    "requirements": "spec-writer"
+  }
+}

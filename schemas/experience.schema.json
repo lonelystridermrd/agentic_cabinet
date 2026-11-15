@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "title": "experience-entry",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["id", "date", "category", "domain", "problem_type", "trigger", "symptom", "root_cause", "fix", "prevention", "tags", "confidence"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^exp-[0-9]{4}-[0-9]{2}-[0-9]{2}-[a-z0-9]+(-[a-z0-9]+)*$" },
+    "date": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+    "category": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*/[a-z0-9]+(-[a-z0-9]+)*$" },
+    "domain": { "type": "string", "enum": ["coding", "debugging", "architecture", "process"] },
+    "problem_type": { "type": "string", "enum": ["bug", "performance", "tooling", "process", "knowledge"] },
+    "trigger": { "type": "string", "minLength": 4 },
+    "symptom": { "type": "string", "minLength": 8 },
+    "root_cause": { "type": "string", "minLength": 8 },
+    "fix": { "type": "string", "minLength": 8 },
+    "prevention": { "type": "string", "minLength": 12 },
+    "tags": { "type": "array", "minItems": 2, "maxItems": 6, "items": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" } },
+    "confidence": { "type": "string", "enum": ["high", "medium", "low"] },
+    "related": { "type": "array", "items": { "type": "string" } }
+  }
+}

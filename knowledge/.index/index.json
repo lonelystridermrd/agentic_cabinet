@@ -1,0 +1,621 @@
+{
+  "generated_at": "2026-11-16T00:05:33+08:00",
+  "root": "C:\\Users\\77214\\workspace\\dsh_workspace\\agentic_skills_deployment",
+  "counts": {
+    "decision": 12,
+    "experience": 12,
+    "sop": 5,
+    "task": 3,
+    "pattern": 8
+  },
+  "entries": [
+    {
+      "type": "decision",
+      "id": "dec-2026-11-07-g1-experience-taxonomy",
+      "date": "2026-11-07",
+      "title": "领域为主分类目录 + 问题类型为副字段，两者都进索引",
+      "domain": "",
+      "tags": [
+        "knowledge",
+        "taxonomy",
+        "indexing"
+      ],
+      "status": "proposed",
+      "confidence": "high",
+      "path": ".dsh/knowledge/decisions/dec-2026-11-07-g1-experience-taxonomy.md",
+      "bytes": 2304
+    },
+    {
+      "type": "decision",
+      "id": "dec-2026-11-07-g2-agents-md-limit",
+      "date": "2026-11-07",
+      "title": "上限 12 条，超出强制下沉 Skill；两周后按实际违反率增删",
+      "domain": "",
+      "tags": [
+        "process",
+        "agents-md"
+      ],
+      "status": "proposed",
+      "confidence": "medium",
+      "path": ".dsh/knowledge/decisions/dec-2026-11-07-g2-agents-md-limit.md",
+      "bytes": 1783
+    },
+    {
+      "type": "decision",
+      "id": "dec-2026-11-07-g3-draft-promote-gate",
+      "date": "2026-11-07",
+      "title": "草稿一律落在 .dsh/drafts/skills/，人工确认后由 kb.py promote 迁入 .dsh/skills/，确认动作 ≤1 分钟",
+      "domain": "",
+      "tags": [
+        "process",
+        "skill",
+        "governance"
+      ],
+      "status": "proposed",
+      "confidence": "high",
+      "path": ".dsh/knowledge/decisions/dec-2026-11-07-g3-draft-promote-gate.md",
+      "bytes": 2156
+    },
+    {
+      "type": "decision",
+      "id": "dec-2026-11-07-g4-confidence-scale",
+      "date": "2026-11-07",
+      "title": "三档枚举 high|medium|low，附一句理由；条目 ≥30 条后再评估是否升级为数值",
+      "domain": "",
+      "tags": [
+        "knowledge",
+        "schema",
+        "decision"
+      ],
+      "status": "proposed",
+      "confidence": "medium",
+      "path": ".dsh/knowledge/decisions/dec-2026-11-07-g4-confidence-scale.md",
+      "bytes": 1724
+    },
+    {
+      "type": "decision",
+      "id": "dec-2026-11-07-g5-code-snippet-policy",
+      "date": "2026-11-07",
+      "title": "默认不存原文；只存「文件类型 + 关键签名 + 复现步骤」，确需片段则脱敏且只留本地、不入库",
+      "domain": "",
+      "tags": [
+        "compliance",
+        "knowledge",
+        "security"
+      ],
+      "status": "proposed",
+      "confidence": "high",
+      "path": ".dsh/knowledge/decisions/dec-2026-11-07-g5-code-snippet-policy.md",
+      "bytes": 2016
+    },
+    {
+      "type": "decision",
+      "id": "dec-2026-11-07-g6-index-strategy",
+      "date": "2026-11-07",
+      "title": "本周做纯文件扫描 + 三维 tag 索引（kb.py）；条目 >200 或漏召回 >20% 再上向量检索",
+      "domain": "",
+      "tags": [
+        "indexing",
+        "tooling",
+        "performance"
+      ],
+      "status": "proposed",
+      "confidence": "high",
+      "path": ".dsh/knowledge/decisions/dec-2026-11-07-g6-index-strategy.md",
+      "bytes": 2203
+    },
+    {
+      "type": "decision",
+      "id": "dec-2026-11-07-g7-drill-task-scope",
+      "date": "2026-11-07",
+      "title": "用当前真实在建任务(认知操作系统自身落地)做演练，低风险、可回退、不碰生产数据与对外接口",
+      "domain": "",
+      "tags": [
+        "process",
+        "validation"
+      ],
+      "status": "proposed",
+      "confidence": "medium",
+      "path": ".dsh/knowledge/decisions/dec-2026-11-07-g7-drill-task-scope.md",
+      "bytes": 2038
+    },
+    {
+      "type": "decision",
+      "id": "dec-2026-11-07-g8-install-strategy",
+      "date": "2026-11-07",
+      "title": "Skill 复制到用户级 skill 根（%DSH_HOME%/skills）；子 Agent 声明为 @deepseek-ai/dsh-agent-preset 追加到 profile 的 cordis.patch.yml",
+      "domain": "",
+      "tags": [
+        "deployment",
+        "dsh",
+        "presets",
+        "skills"
+      ],
+      "status": "proposed",
+      "confidence": "medium",
+      "path": ".dsh/knowledge/decisions/dec-2026-11-07-g8-install-strategy.md",
+      "bytes": 3312
+    },
+    {
+      "type": "decision",
+      "id": "dec-2026-11-14-embedded-c-skill-split",
+      "date": "2026-11-14",
+      "title": "拆成三个 Skill（c-embedded-coding 规范执行、c-embedded-playbook 设计手法、experience-interview 引导式梳理）加一份共享 profile，经验按「可执行规则进 Skill、单条踩坑进 exp-*、取舍进 dec-*」分流",
+      "domain": "",
+      "tags": [
+        "skill",
+        "domain",
+        "c",
+        "embedded",
+        "governance"
+      ],
+      "status": "accepted",
+      "confidence": "medium",
+      "path": ".dsh/knowledge/decisions/dec-2026-11-14-embedded-c-skill-split.md",
+      "bytes": 3957
+    },
+    {
+      "type": "decision",
+      "id": "dec-2026-11-14-research-layers-separation",
+      "date": "2026-11-14",
+      "title": "取证层保持不变；新增 tech-evaluation 作为编排层，负责广度发散、按约束收敛、原理与演进分析、编译产物实测、产出决策材料；最终选型由人决定",
+      "domain": "",
+      "tags": [
+        "research",
+        "skill",
+        "evaluation",
+        "evidence"
+      ],
+      "status": "accepted",
+      "confidence": "medium",
+      "path": ".dsh/knowledge/decisions/dec-2026-11-14-research-layers-separation.md",
+      "bytes": 3692
+    },
+    {
+      "type": "decision",
+      "id": "dec-2026-11-15-decision-layer-skill",
+      "date": "2026-11-15",
+      "title": "新增 tech-selection-decision 承担决策建议：审来源、重建四场景、七维评估、单点发散、冲突裁决后给出首选/备选/否决/反转条件；dec 仍由人拍板为 accepted",
+      "domain": "",
+      "tags": [
+        "skill",
+        "decision",
+        "research",
+        "governance"
+      ],
+      "status": "accepted",
+      "confidence": "medium",
+      "path": ".dsh/knowledge/decisions/dec-2026-11-15-decision-layer-skill.md",
+      "bytes": 3626
+    },
+    {
+      "type": "decision",
+      "id": "dec-2026-11-15-iomux-design-choice",
+      "date": "2026-11-15",
+      "title": "自研 libiomux：epoll 水平触发 + EPOLLONESHOT 抑制 + 单 Reactor + 可配置 worker 池 + 每 worker SPSC 队列 + 完成环回 Reactor；不引入 libevent/libuv，不使用 io_uring",
+      "domain": "",
+      "tags": [
+        "design",
+        "iomux",
+        "epoll",
+        "decision"
+      ],
+      "status": "accepted",
+      "confidence": "medium",
+      "path": ".dsh/knowledge/decisions/dec-2026-11-15-iomux-design-choice.md",
+      "bytes": 8430
+    },
+    {
+      "type": "experience",
+      "id": "exp-2026-11-07-frontmatter-empty-value-roundtrip",
+      "date": "2026-11-07",
+      "title": "自写 front-matter 序列化把空字符串写成 `key:`，再被自己的解析器读回",
+      "domain": "coding",
+      "tags": [
+        "python",
+        "parser",
+        "serialization",
+        "testing"
+      ],
+      "status": "",
+      "confidence": "high",
+      "path": ".dsh/knowledge/experiences/coding/exp-2026-11-07-frontmatter-empty-value-roundtrip.md",
+      "bytes": 2104
+    },
+    {
+      "type": "experience",
+      "id": "exp-2026-11-07-yaml-quoted-list-items",
+      "date": "2026-11-07",
+      "title": "自写的极简 YAML front-matter 解析器遇到带引号的块列表项",
+      "domain": "coding",
+      "tags": [
+        "python",
+        "parser",
+        "yaml",
+        "coding"
+      ],
+      "status": "",
+      "confidence": "high",
+      "path": ".dsh/knowledge/experiences/coding/exp-2026-11-07-yaml-quoted-list-items.md",
+      "bytes": 1768
+    },
+    {
+      "type": "experience",
+      "id": "exp-2026-11-14-async-ownership-early-free",
+      "date": "2026-11-14",
+      "title": "malloc 出的对象通过注册接口交给其它线程或全局框架后，调用方在注册成功时当场 free",
+      "domain": "coding",
+      "tags": [
+        "c",
+        "memory",
+        "ownership",
+        "concurrency"
+      ],
+      "status": "",
+      "confidence": "medium",
+      "path": ".dsh/knowledge/experiences/coding/exp-2026-11-14-async-ownership-early-free.md",
+      "bytes": 1905
+    },
+    {
+      "type": "experience",
+      "id": "exp-2026-11-14-loop-alloc-partial-free",
+      "date": "2026-11-14",
+      "title": "循环里逐个 malloc，中途某次失败时只释放当前这一个条目就返回错误",
+      "domain": "coding",
+      "tags": [
+        "c",
+        "memory",
+        "error-path",
+        "rollback"
+      ],
+      "status": "",
+      "confidence": "medium",
+      "path": ".dsh/knowledge/experiences/coding/exp-2026-11-14-loop-alloc-partial-free.md",
+      "bytes": 1487
+    },
+    {
+      "type": "experience",
+      "id": "exp-2026-11-14-memcpy-one-sided-length-check",
+      "date": "2026-11-14",
+      "title": "调用 memcpy 时，长度 n 只对 src 或 dst 其中一侧做过容量校验",
+      "domain": "coding",
+      "tags": [
+        "c",
+        "memory",
+        "memcpy",
+        "bounds"
+      ],
+      "status": "",
+      "confidence": "medium",
+      "path": ".dsh/knowledge/experiences/coding/exp-2026-11-14-memcpy-one-sided-length-check.md",
+      "bytes": 1614
+    },
+    {
+      "type": "experience",
+      "id": "exp-2026-11-14-select-closed-fd",
+      "date": "2026-11-14",
+      "title": "select 的 fd_set 里仍保留已经 close 掉的套接字",
+      "domain": "coding",
+      "tags": [
+        "c",
+        "socket",
+        "select",
+        "fd-lifecycle"
+      ],
+      "status": "",
+      "confidence": "medium",
+      "path": ".dsh/knowledge/experiences/coding/exp-2026-11-14-select-closed-fd.md",
+      "bytes": 1569
+    },
+    {
+      "type": "experience",
+      "id": "exp-2026-11-14-sscanf-width-mismatch",
+      "date": "2026-11-14",
+      "title": "用 sscanf/scanf 的 %x/%u/%d 解析，同时把结果写进 char 或 short 变量",
+      "domain": "coding",
+      "tags": [
+        "c",
+        "sscanf",
+        "format-string",
+        "stack-corruption"
+      ],
+      "status": "",
+      "confidence": "medium",
+      "path": ".dsh/knowledge/experiences/coding/exp-2026-11-14-sscanf-width-mismatch.md",
+      "bytes": 1699
+    },
+    {
+      "type": "experience",
+      "id": "exp-2026-11-14-uninit-stack-var",
+      "date": "2026-11-14",
+      "title": "栈上的变量或结构体没有初始化，就传给其它进程（管道/共享内存/消息），或者直接自增",
+      "domain": "coding",
+      "tags": [
+        "c",
+        "uninitialized",
+        "stack",
+        "ipc"
+      ],
+      "status": "",
+      "confidence": "medium",
+      "path": ".dsh/knowledge/experiences/coding/exp-2026-11-14-uninit-stack-var.md",
+      "bytes": 1665
+    },
+    {
+      "type": "experience",
+      "id": "exp-2026-11-07-asar-offset-relative",
+      "date": "2026-11-07",
+      "title": "想从 app.asar 里按 header 记录的 offset 直接读某个文件内容",
+      "domain": "debugging",
+      "tags": [
+        "asar",
+        "binary-format",
+        "electron",
+        "tooling"
+      ],
+      "status": "",
+      "confidence": "high",
+      "path": ".dsh/knowledge/experiences/debugging/exp-2026-11-07-asar-offset-relative.md",
+      "bytes": 2257
+    },
+    {
+      "type": "experience",
+      "id": "exp-2026-11-07-gbk-python-stdout",
+      "date": "2026-11-07",
+      "title": "在 pwsh 中用 -c 调用 python 并 print 中日韩字符",
+      "domain": "debugging",
+      "tags": [
+        "windows",
+        "python",
+        "encoding",
+        "tooling"
+      ],
+      "status": "",
+      "confidence": "high",
+      "path": ".dsh/knowledge/experiences/debugging/exp-2026-11-07-gbk-python-stdout.md",
+      "bytes": 1921
+    },
+    {
+      "type": "experience",
+      "id": "exp-2026-11-07-mkdtemp-sandbox-denied",
+      "date": "2026-11-07",
+      "title": "在 DSH Windows 沙箱内用 tempfile.mkdtemp 建临时目录，再往里创建子目录",
+      "domain": "debugging",
+      "tags": [
+        "windows",
+        "sandbox",
+        "python",
+        "testing"
+      ],
+      "status": "",
+      "confidence": "medium",
+      "path": ".dsh/knowledge/experiences/debugging/exp-2026-11-07-mkdtemp-sandbox-denied.md",
+      "bytes": 2638
+    },
+    {
+      "type": "experience",
+      "id": "exp-2026-11-07-template-dir-scanned",
+      "date": "2026-11-07",
+      "title": "知识库模板文件放在被扫描的目录树内",
+      "domain": "process",
+      "tags": [
+        "knowledge-base",
+        "scanning",
+        "tooling",
+        "process"
+      ],
+      "status": "",
+      "confidence": "high",
+      "path": ".dsh/knowledge/experiences/process/exp-2026-11-07-template-dir-scanned.md",
+      "bytes": 1942
+    },
+    {
+      "type": "sop",
+      "id": "sop-coding-feature-development",
+      "date": "2026-11-07",
+      "title": "接到新功能需求（有明确交付物，需改动代码）",
+      "domain": "coding",
+      "tags": [],
+      "status": "",
+      "confidence": "",
+      "path": ".dsh/knowledge/sops/coding/feature-development.md",
+      "bytes": 1934
+    },
+    {
+      "type": "sop",
+      "id": "sop-ops-release",
+      "date": "2026-11-07",
+      "title": "要把一批变更对外发布（版本号、changelog、发布检查）",
+      "domain": "ops",
+      "tags": [],
+      "status": "",
+      "confidence": "",
+      "path": ".dsh/knowledge/sops/ops/release.md",
+      "bytes": 1833
+    },
+    {
+      "type": "sop",
+      "id": "sop-research-tech-selection",
+      "date": "2026-11-07",
+      "title": "需要在 ≥2 个技术方案间选型（库、协议、架构模式）",
+      "domain": "research",
+      "tags": [],
+      "status": "",
+      "confidence": "",
+      "path": ".dsh/knowledge/sops/research/tech-selection.md",
+      "bytes": 1799
+    },
+    {
+      "type": "sop",
+      "id": "sop-review-code-review",
+      "date": "2026-11-07",
+      "title": "提交前/合并前需要一轮结构化代码审查",
+      "domain": "review",
+      "tags": [],
+      "status": "",
+      "confidence": "",
+      "path": ".dsh/knowledge/sops/review/code-review.md",
+      "bytes": 1615
+    },
+    {
+      "type": "sop",
+      "id": "sop-review-knowledge-maintenance",
+      "date": "2026-11-07",
+      "title": "每周一次，或 kb.py validate 出现 error 时",
+      "domain": "review",
+      "tags": [],
+      "status": "",
+      "confidence": "",
+      "path": ".dsh/knowledge/sops/review/knowledge-maintenance.md",
+      "bytes": 2167
+    },
+    {
+      "type": "task",
+      "id": "TASK-2026-11-07-cognitive-os-p0",
+      "date": "2026-11-07",
+      "title": "认知操作系统阶段 0（T01–T08）",
+      "domain": "process/knowledge-system",
+      "tags": [],
+      "status": "in_progress",
+      "confidence": "",
+      "path": ".dsh/tasks/active/TASK-2026-11-07-cognitive-os-p0.md",
+      "bytes": 2926
+    },
+    {
+      "type": "task",
+      "id": "TASK-2026-11-07-p1-domain-skills",
+      "date": "2026-11-07",
+      "title": "P1 真实任务验证领域 Skill",
+      "domain": "process/knowledge-system",
+      "tags": [],
+      "status": "backlog",
+      "confidence": "",
+      "path": ".dsh/tasks/backlog/TASK-2026-11-07-p1-domain-skills.md",
+      "bytes": 998
+    },
+    {
+      "type": "task",
+      "id": "TASK-2026-11-16-comment-coverage-pending",
+      "date": "2026-11-16",
+      "title": "注释覆盖与流水线遗留事务",
+      "domain": "coding/general",
+      "tags": [],
+      "status": "in_progress",
+      "confidence": "",
+      "path": ".dsh/tasks/backlog/TASK-2026-11-16-comment-coverage-pending.md",
+      "bytes": 3316
+    },
+    {
+      "type": "pattern",
+      "id": "pat-anti-manual-index",
+      "date": "",
+      "title": "**识别信号**：有人开始手工编辑 `index.md`，或索引与条目对不上。",
+      "domain": "",
+      "tags": [
+        "anti"
+      ],
+      "status": "anti",
+      "confidence": "",
+      "path": ".dsh/knowledge/patterns/anti-patterns.md",
+      "bytes": 1535
+    },
+    {
+      "type": "pattern",
+      "id": "pat-anti-skill-explosion",
+      "date": "",
+      "title": "**识别信号**：新 Skill 的 `whenToUse` 与已有 Skill 语义重叠 ≥50%；同一周新增 ≥3 个 Skill。",
+      "domain": "",
+      "tags": [
+        "anti"
+      ],
+      "status": "anti",
+      "confidence": "",
+      "path": ".dsh/knowledge/patterns/anti-patterns.md",
+      "bytes": 1535
+    },
+    {
+      "type": "pattern",
+      "id": "pat-anti-vague-prevention",
+      "date": "",
+      "title": "**识别信号**：经验条目的 `prevention` 出现「注意」「小心」「适当」。",
+      "domain": "",
+      "tags": [
+        "anti"
+      ],
+      "status": "anti",
+      "confidence": "",
+      "path": ".dsh/knowledge/patterns/anti-patterns.md",
+      "bytes": 1535
+    },
+    {
+      "type": "pattern",
+      "id": "pat-anti-over-broad-agent",
+      "date": "",
+      "title": "**识别信号**：一张 persona 卡片同时负责编码、调研、发布；或 `mode: read-write` 却没有 `can_write` 白名单。",
+      "domain": "",
+      "tags": [
+        "anti"
+      ],
+      "status": "anti",
+      "confidence": "",
+      "path": ".dsh/knowledge/patterns/anti-patterns.md",
+      "bytes": 1535
+    },
+    {
+      "type": "pattern",
+      "id": "pat-good-frontmatter-first",
+      "date": "",
+      "title": "**适用**：任何要长期复用的结构化资产（决策/经验/SOP/任务）。",
+      "domain": "",
+      "tags": [
+        "good"
+      ],
+      "status": "good",
+      "confidence": "",
+      "path": ".dsh/knowledge/patterns/good-patterns.md",
+      "bytes": 1643
+    },
+    {
+      "type": "pattern",
+      "id": "pat-good-checkbox-gate",
+      "date": "",
+      "title": "**适用**：Skill 的质量闸门、SOP 的检查点、任务卡验收。",
+      "domain": "",
+      "tags": [
+        "good"
+      ],
+      "status": "good",
+      "confidence": "",
+      "path": ".dsh/knowledge/patterns/good-patterns.md",
+      "bytes": 1643
+    },
+    {
+      "type": "pattern",
+      "id": "pat-good-sandbox-then-promote",
+      "date": "",
+      "title": "**适用**：任何自动生成物进入正式资产库之前。",
+      "domain": "",
+      "tags": [
+        "good"
+      ],
+      "status": "good",
+      "confidence": "",
+      "path": ".dsh/knowledge/patterns/good-patterns.md",
+      "bytes": 1643
+    },
+    {
+      "type": "pattern",
+      "id": "pat-good-capture-then-recall",
+      "date": "",
+      "title": "**适用**：验证知识库是否真的在起作用。",
+      "domain": "",
+      "tags": [
+        "good"
+      ],
+      "status": "good",
+      "confidence": "",
+      "path": ".dsh/knowledge/patterns/good-patterns.md",
+      "bytes": 1643
+    }
+  ]
+}
